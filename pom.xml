@@ -196,34 +196,7 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>ch.fortysix</groupId>
-				<artifactId>maven-postman-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>send surefire notification</id>
-						<phase>install</phase>
-						<goals>
-							<goal>send-mail</goal>
-						</goals>
-						<inherited>false</inherited>
-						<configuration>
-							<from>ravi.mahobia@silicus.com</from>
-							<subject>QA test automation - execution result report.</subject>
-							<groovyCondition><![CDATA[errors > 0 || failures > 0]]></groovyCondition>
-							<failonerror>true</failonerror>
-							<mailhost>webmail.silicus.com</mailhost>
-							<!-- Need to request an appropriate Exchange account for Automation -->
-							<mailuser>ravi.mahobia</mailuser>
-							<mailpassword>xxxxxxxx</mailpassword>
-							<htmlMessageFile>target/surefire-reports/emailable-report.html</htmlMessageFile>
-							<receivers>
-								<receiver>dilip.sant@silicus.com</receiver>
-							</receivers>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+	
 		</plugins>
 	</build>
 

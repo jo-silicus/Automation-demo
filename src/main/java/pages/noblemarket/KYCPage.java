@@ -27,6 +27,9 @@ import utilities.PropertyDictionary;
 
 public class KYCPage extends BasePage<KYCPage>{
 	
+	int timeDelay=2000;
+	//String filePath = System.getProperty("user.dir")+PropertyDictionary.map.get("UploadPath");
+	String filePath = PropertyDictionary.map.get("UploadPath");
 	@FindBy(id = "email")
 	private WebElement email;
 	
@@ -286,8 +289,9 @@ public class KYCPage extends BasePage<KYCPage>{
 		}*/
 		citizenshipCountry.sendKeys("Ind");
 		citizenshipCountry.sendKeys("i");
-		commonAction.Wait(1000);
+		commonAction.Wait(timeDelay);
 		citizenshipCountry.sendKeys("a");
+		commonAction.Wait(timeDelay);
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), countryList.get(0), 30000);
 		countryList.get(0).click();
 		homeAddress.sendKeys(PropertyDictionary.map.get("HomeAddress"));
@@ -299,8 +303,9 @@ public class KYCPage extends BasePage<KYCPage>{
 		}	*/
 		country.sendKeys("Ind");
 		country.sendKeys("i");
-		commonAction.Wait(1000);
+		commonAction.Wait(timeDelay);
 		country.sendKeys("a");
+		commonAction.Wait(timeDelay);
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), countryList.get(0), 30000);
 		countryList.get(0).click();
 		state.sendKeys("Maharashtra");
@@ -313,18 +318,22 @@ public class KYCPage extends BasePage<KYCPage>{
 		idNo.sendKeys("123456");	
 		idCountry.sendKeys("Ind");
 		idCountry.sendKeys("i");
-		commonAction.Wait(1000);
+		commonAction.Wait(timeDelay);
 		idCountry.sendKeys("a");
+		commonAction.Wait(timeDelay);
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), countryList.get(0), 30000);
 		countryList.get(0).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), calender.get(1), 9000);	
 		calender.get(1).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), calender.get(2), 9000);
 		calender.get(2).click();	
-		String filePath = System.getProperty("user.dir")+PropertyDictionary.map.get("UploadPath");
+		//String filePath = System.getProperty("user.dir")+PropertyDictionary.map.get("UploadPath");
+		
 		System.out.println(filePath);
 		upload1.sendKeys(filePath);	
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGrid, 9000);
+		commonAction.Wait(timeDelay);
+		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), save.get(1), 9000);
 		save.get(1).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), next, 9000);
 		next.click();		
@@ -361,6 +370,7 @@ public class KYCPage extends BasePage<KYCPage>{
 		calender.get(2).click();	
 		upload1.sendKeys(PropertyDictionary.map.get("UploadPath"));	
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGrid, 9000);
+		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), save.get(1), 9000);
 		save.get(1).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), next, 9000);
 		next.click();		
@@ -395,19 +405,20 @@ public class KYCPage extends BasePage<KYCPage>{
 		commonAction.selectDropdown(selectBaseCurrency, "string:USD");
 			
 		commonAction.selectDropdown(selectTypeOfBusiness, PropertyDictionary.map.get("TypeOfBusiness"));
-		Thread.sleep(1000);
+		Thread.sleep(timeDelay);
 		
 		sourceOfFund.sendKeys("Silicussource");
-		Thread.sleep(1000);
+		Thread.sleep(timeDelay);
 		
 		hqAddress.sendKeys("SilicusTestAddress");
-		Thread.sleep(1000);
+		Thread.sleep(timeDelay);
 		
 		//commonAction.selectDropdown(selectHqCountry, "object:140");
 		selectHqCountry.sendKeys("Ind");
 		selectHqCountry.sendKeys("i");
-		commonAction.Wait(1000);
+		commonAction.Wait(timeDelay);
 		selectHqCountry.sendKeys("a");
+		commonAction.Wait(timeDelay);
 		//commonAction.Wait(2000);
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), countryList.get(0), 30000);
 		countryList.get(0).click();
@@ -415,19 +426,19 @@ public class KYCPage extends BasePage<KYCPage>{
 		hqCity.sendKeys("Pune");
 		
 		hqZip.sendKeys("456123");
-		Thread.sleep(1000);
+		Thread.sleep(timeDelay);
 		
 		sameAsAbove.click();
 		
 		phone.sendKeys("1234567890");
-		Thread.sleep(1000);
+		Thread.sleep(timeDelay);
 		
 		alternatePhone.sendKeys("9874651230");
 			
 		alternatecallPhone.sendKeys("32012467890");
 		
 		callBackEmail.sendKeys("silicusTest@silicus.com");		
-		String filePath = System.getProperty("user.dir")+PropertyDictionary.map.get("UploadPath");
+		
 		System.out.println(filePath);
 		commonAction.selectDropdown(selectEntityDocUpload, "Ownership Entity Legal Doc");
 		upload2.sendKeys(filePath);

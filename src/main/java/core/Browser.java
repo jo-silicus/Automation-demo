@@ -30,7 +30,7 @@ public class Browser {
 			//Dilip
 			caps = DesiredCapabilities.chrome();
 			caps.setBrowserName("chrome");
-			caps.setPlatform(Platform.LINUX);
+			caps.setPlatform(Platform.WINDOWS);
 			//System.setProperty("webdriver.chrome.driver","/home/dilip/Devlopment_Dilip_NobleAutomation/lib/chromedriver");
 			//System.out.println("In Browser.java -- before launching Web Driver");
 			driver = new RemoteWebDriver(new URL(PropertyDictionary.map.get("remoteWebdriver")),caps);

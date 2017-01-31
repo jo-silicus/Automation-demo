@@ -335,9 +335,8 @@ public class KYCPage extends BasePage<KYCPage>{
 		upload1.sendKeys(filePath);	
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGrid, 9000);
 		commonAction.Wait(5000);
-		Actions actions = new Actions(webBrowser.getWebDriver());
-		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), save.get(1), 9000);
-		actions.moveToElement(save.get(1)).click().perform();
+		WebElement savePersonalInfo=webBrowser.getWebDriver().findElement(By.cssSelector("button[data-ng-click='savePersonalInfo()']"));
+		  savePersonalInfo.click();
 		//save.get(1).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), next, 9000);
 		next.click();		

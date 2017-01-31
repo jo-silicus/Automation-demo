@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -333,6 +334,8 @@ public class KYCPage extends BasePage<KYCPage>{
 		upload1.sendKeys(filePath);	
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGrid, 9000);
 		commonAction.Wait(timeDelay);
+		JavascriptExecutor jse = (JavascriptExecutor)webBrowser.getWebDriver();
+		jse.executeScript("scroll(0, 250)"); // if the element is on bottom.
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), save.get(1), 9000);
 		save.get(1).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), next, 9000);

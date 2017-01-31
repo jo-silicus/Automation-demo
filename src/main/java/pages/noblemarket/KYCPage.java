@@ -339,6 +339,7 @@ public class KYCPage extends BasePage<KYCPage>{
 		  savePersonalInfo.click();
 		//save.get(1).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), next, 9000);
+		System.out.println("Click on Next");
 		next.click();		
 		return new KYCPage(webBrowser);
 	}

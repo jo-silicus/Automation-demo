@@ -342,7 +342,7 @@ public class KYCPage extends BasePage<KYCPage>{
 		System.out.println("Click on Next");
 		WebElement nextPersonal=webBrowser.getWebDriver().findElement(By.cssSelector("button[data-ng-click='personalNext()']"));
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), nextPersonal, 9000);
-		commonAction.Wait(5000);
+		commonAction.Wait(10000);
 		nextPersonal.click();
 		//next.click();		
 		return new KYCPage(webBrowser);
@@ -458,7 +458,8 @@ public class KYCPage extends BasePage<KYCPage>{
 		commonAction.Wait(2000);
 		save.get(3).click();
 		commonAction.Wait(2000);
-		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), entityNext, 19000);	
+		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), entityNext, 19000);
+		commonAction.Wait(5000);
 		entityNext.click();
 				
 		return new KYCPage(webBrowser);

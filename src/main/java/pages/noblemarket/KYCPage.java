@@ -333,7 +333,8 @@ public class KYCPage extends BasePage<KYCPage>{
 		System.out.println(filePath);
 		upload1.sendKeys(filePath);	
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGrid, 9000);
-		commonAction.Wait(timeDelay);
+		commonAction.Wait(5000);
+		System.out.println("Scrolling Down.....");
 		JavascriptExecutor jse = (JavascriptExecutor)webBrowser.getWebDriver();
 		jse.executeScript("scroll(0, 250)"); // if the element is on bottom.
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), save.get(1), 9000);

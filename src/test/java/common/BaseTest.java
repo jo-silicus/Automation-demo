@@ -74,8 +74,8 @@ public class BaseTest {
         }
 		test.getTest().setStartedTime(new Date(result.getStartMillis()));
 		 test.getTest().setEndedTime(new Date(result.getEndMillis()));
-		webBrowser.getWebDriver().close();
-		webBrowser.getWebDriver().quit();
+	/*	webBrowser.getWebDriver().close();
+		webBrowser.getWebDriver().quit();*/
 		report.endTest(test);
 	}
 	

@@ -11,6 +11,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -334,11 +335,10 @@ public class KYCPage extends BasePage<KYCPage>{
 		upload1.sendKeys(filePath);	
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGrid, 9000);
 		commonAction.Wait(5000);
-		System.out.println("Scrolling Down.....");
-		JavascriptExecutor jse = (JavascriptExecutor)webBrowser.getWebDriver();
-		jse.executeScript("scroll(0, 250)"); // if the element is on bottom.
+		Actions actions = new Actions(webBrowser.getWebDriver());
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), save.get(1), 9000);
-		save.get(1).click();
+		actions.moveToElement(save.get(1)).click().perform();
+		//save.get(1).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), next, 9000);
 		next.click();		
 		return new KYCPage(webBrowser);
